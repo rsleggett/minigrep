@@ -34,7 +34,7 @@ impl Config {
         let ignore_case = if args.len() == 4 {
             match args[3].clone().parse::<bool>() {
                 Ok(e) => e,
-                Err(e) => return Err("Ignore case parameter (3) not parsable")
+                Err(_e) => return Err("Ignore case parameter (3) not parsable")
             }
         } else {
             env::var("IGNORE_CASE").is_ok()
